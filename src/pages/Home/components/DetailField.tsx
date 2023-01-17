@@ -2,29 +2,39 @@ import { makeStyles } from "tss-react/mui";
 
 const detailStyle = makeStyles()(theme => ({
     root: {
+        zIndex: '1000 !important',
         background: "#000",
         color: '#fff',
         display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         padding: "70px 45px",
         borderTop: '8px solid #222',
-        justifyContent: 'space-between',
-        [`&:nth-child(odd)`]: {
-            flexDirection: 'row-reverse',
-            [`& > div#left`]: {
+        [`&:nth-of-type(odd)`]: {
+            ['& > div']: {
+                flexDirection: 'row-reverse',
+            },
+            [`& div#left`]: {
                 paddingRight: '0 !important',
             },
-            [`& > div#right`]: {
+            [`& div#right`]: {
                 paddingRight: '3rem !important',
             }
         },
         [`& > div`]: {
-            // display: 'flex',
-                width: '50%',
+            display: 'flex',
+            width: '100%',
+            maxWidth: '1690px',
+            justifyContent: 'space-between',
+            // [`& > div`]: {
+            //     // width: '50%',
+            // }
         }
     },
     detailsMain: {
         display: 'flex',
         flexDirection: 'column',
+        width: '52%',
         justifyContent: 'center',
         [`& > h1`]: {
             fontSize: '3.125rem',
@@ -48,14 +58,17 @@ const DetailField = ({ detail }: any) => {
     console.log(detail);
     const { classes } = detailStyle();
     return (
-    <section className={classes.root}>
-        <div className={classes.detailsMain} id='left'>
-            <h1>{detail.topic}</h1>
-            <h2>{detail.desc}</h2>
-        </div>
+    <section className={classes.root} key={detail.key}>
+        <div>
+            <div className={classes.detailsMain} id='left'>
+                <h1>{detail.topic}</h1>
+                <h2>{detail.desc}</h2>
+            </div>
 
-        <div className={classes.illustration} id="right">
-            {detail.illustration}
+            <div className={classes.illustration} id="right">
+                {detail.illustration}
+            </div>
+
         </div>
 
     </section>

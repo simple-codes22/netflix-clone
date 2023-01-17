@@ -1,9 +1,15 @@
 import { makeStyles } from 'tss-react/mui';
-import { TextField, Button } from '@mui/material';
-
-
+import { Button } from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const InputFieldStyle = makeStyles()(themes => ({
+    pre: {
+        margin: '60px 0',
+        [`& h3`]: {
+            fontWeight: 'normal',
+            fontSize: '20px',
+        },
+    },
     root: {
         display: 'flex',
         justifyContent: 'center',
@@ -76,14 +82,17 @@ const InputFieldStyle = makeStyles()(themes => ({
 const InputField = () => {
     const { classes } = InputFieldStyle();
     return (
-    <div className={classes.root}>
+    <div className={classes.pre}>
+        <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
 
-        {/* <TextField label="Email address" className={classes.input} variant="outlined" /> */}
-        <div className={classes.input}>
-            <input type="email" placeholder='Email address' autoComplete='off' />
+        <div className={classes.root}>
+            {/* <TextField label="Email address" className={classes.input} variant="outlined" /> */}
+            <div className={classes.input}>
+                <input type="email" placeholder='Email address' autoComplete='off' />
+            </div>
+
+            <Button className={classes.btn} variant='contained'>Get Started <ArrowForwardIosIcon /></Button>
         </div>
-
-        <Button className={classes.btn} variant='contained'>Get Started</Button>
     </div>
   )
 }

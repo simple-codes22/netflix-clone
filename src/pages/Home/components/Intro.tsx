@@ -20,6 +20,9 @@ const IntroStyle = makeStyles()(theme => ({
         alignItems: 'center',
         color: '#fff ',
         width: '100%',
+        ['& *']: {
+            zIndex: '1'
+        }
     },
     header: {
         display: 'flex',
@@ -35,7 +38,7 @@ const IntroStyle = makeStyles()(theme => ({
     },
     background: {
         position: 'absolute',
-        zIndex: '-1000',
+        zIndex: '0',
         top: '-70px',
         bottom: '0',
         left: '0',
@@ -80,11 +83,6 @@ const IntroStyle = makeStyles()(theme => ({
             fontSize: '1.625rem',
             fontWeight: 'normal',
             padding: '30px 0',
-        },
-        [`& h3`]: {
-            fontWeight: 'normal',
-            fontSize: '20px',
-
         },
         [`& > div`]: {
             marginTop: '20px'
@@ -139,7 +137,6 @@ const Intro = (props: Props) => {
             </h2>
 
             <div>
-                <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
                 <InputField />
             </div>
 
