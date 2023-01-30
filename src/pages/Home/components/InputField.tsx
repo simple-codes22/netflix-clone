@@ -15,6 +15,10 @@ const InputFieldStyle = makeStyles()(themes => ({
         justifyContent: 'center',
         alignItems: 'center',
         margin: '30px 0',
+        [themes.breakpoints.down(950)]: {
+            flexDirection: 'column',
+            maxWidth: '700px',
+        }
     },
     input: {
         // background: "#fff !important",
@@ -64,6 +68,15 @@ const InputFieldStyle = makeStyles()(themes => ({
                 transform: 'translateY(-20%)',
                 transition: 'all .3s ease-in-out',
                 color: '#8c8c8c',
+            },
+        },
+        [themes.breakpoints.down(950)]: {
+            maxWidth: '100%',
+            width: '100%',
+            minWidth: '0',
+            ['& > input']: {
+                minWidth: '0',
+                width: '60%',
             }
         }
     },
@@ -75,6 +88,20 @@ const InputFieldStyle = makeStyles()(themes => ({
         textTransform: 'capitalize',
         borderTopRightRadius: '1px',
         borderBottomRightRadius: '1px',
+        ["&:hover"]: {
+            background: themes.palette.primary.main,
+        },
+        ['& > svg']: {
+            paddingLeft: '10px',
+        },
+        [themes.breakpoints.down(950)]: {
+            margin: '10px 0',
+            minHeight: '40px',
+            fontSize: '1rem',
+            flex: '1 1 auto',
+            padding: '.35em 10px',
+            borderRadius: '2px',
+        }
     }
 
 })

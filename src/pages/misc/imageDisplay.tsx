@@ -76,7 +76,13 @@ const illustrationStyles = makeStyles()(theme => ({
         }
     },
     illustrationThree: {
-
+        // maxHeight: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        ['& img']: {
+            maxWidth: '100%',
+        }
     }
 }))
 

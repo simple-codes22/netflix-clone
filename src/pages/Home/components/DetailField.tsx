@@ -13,19 +13,32 @@ const detailStyle = makeStyles()(theme => ({
         [`&:nth-of-type(odd)`]: {
             ['& > div']: {
                 flexDirection: 'row-reverse',
+                [theme.breakpoints.down(950)]: {
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }
             },
             [`& div#left`]: {
                 paddingRight: '0 !important',
             },
             [`& div#right`]: {
                 paddingRight: '3rem !important',
-            }
+                [theme.breakpoints.down(950)]: {
+                    paddingRight: '0 !important'
+                }
+            },
         },
         [`& > div`]: {
             display: 'flex',
             width: '100%',
             maxWidth: '1690px',
             justifyContent: 'space-between',
+            [theme.breakpoints.down(950)]: {
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }
             // [`& > div`]: {
             //     // width: '50%',
             // }
@@ -47,15 +60,25 @@ const detailStyle = makeStyles()(theme => ({
             letterSpacing: '.5px',
         },
         paddingRight: '3rem',
+        [theme.breakpoints.down(950)]: {
+            width: '100%',
+            textAlign: 'center',
+            paddingRight: '0',
+        },
     },
     illustration: {
         height: '100%',
         width: '48%',
+        [theme.breakpoints.down(950)]: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+        },
     },
 }))
 
 const DetailField = ({ detail }: any) => {
-    console.log(detail);
     const { classes } = detailStyle();
     return (
     <section className={classes.root} key={detail.key}>
