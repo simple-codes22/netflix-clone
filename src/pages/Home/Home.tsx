@@ -54,7 +54,7 @@ const Home = () => {
     <section className={classes.root}>
         <Intro />
         {details.map(elem => (
-          <DetailField detail={elem} />
+          <DetailField detail={elem} key={elem.key} />
         ))}
         <FAQ />
         <Footer />

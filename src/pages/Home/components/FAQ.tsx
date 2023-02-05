@@ -89,7 +89,7 @@ const FAQ = () => {
             </h1>
             <div>
                 {mainFAQs.map(elem => (
-                    <Accordion className={classes.accord}>
+                    <Accordion className={classes.accord} key={mainFAQs.indexOf(elem)+1}>
                         <AccordionSummary
                             expandIcon={<AddIcon />}
                         >

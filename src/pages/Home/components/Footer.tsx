@@ -121,7 +121,7 @@ const Footer = () => {
             
             <div className={classes.linkedList}>
                 {links.map(elem => (
-                    <a href={elem.link}>{elem.name}</a>
+                    <a href={elem.link} key={links.indexOf(elem)+1}>{elem.name}</a>
                 ))}
             </div>
             
