@@ -17,26 +17,13 @@ const InputFieldStyle = makeStyles()(themes => ({
         margin: '30px 0',
         [themes.breakpoints.down(950)]: {
             flexDirection: 'column',
-            maxWidth: '700px',
+            maxWidth: '100%',
         }
     },
     input: {
-        // background: "#fff !important",
-        // padding: '10px 0',
-        // [`& label, & legend`]: {
-        //     color: '#fff !important',
-        // },
-        // [`& div`]: {
-        //     borderRadius: '0 !important',
-        //     // outline: '2px solid #fff !important',
-        // },
-        // [`& fieldset`]: {
-        //     border: "0 !important",
-        // }
-
-        // display: 'flex',
-        // justifyContent: 'center',
-        // alignContent: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         [`& > label`]: {
             display: 'absolute',
         },
@@ -75,8 +62,10 @@ const InputFieldStyle = makeStyles()(themes => ({
             width: '100%',
             minWidth: '0',
             ['& > input']: {
+                width: '100%',
+                maxWidth: '100%',
                 minWidth: '0',
-                width: '60%',
+                // width: '60%',
             }
         }
     },
